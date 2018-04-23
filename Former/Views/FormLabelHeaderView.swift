@@ -31,7 +31,7 @@ open class FormLabelHeaderView: FormHeaderFooterView, LabelFormableView {
         
         let constraints = [
           NSLayoutConstraint.constraints(
-            withVisualFormat: "V:[label(>=0)]-5-|",
+            withVisualFormat: "V:|-8-[label(>=0)]-8-|",
                 options: [],
                 metrics: nil,
                 views: ["label": titleLabel]

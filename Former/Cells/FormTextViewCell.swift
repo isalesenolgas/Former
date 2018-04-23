@@ -46,13 +46,13 @@ open class FormTextViewCell: FormCell, TextViewFormableRow {
         
         let constraints = [
           NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-10-[label(>=0)]",
+            withVisualFormat: "V:|-15-[label(>=0)]-15-|",
                 options: [],
                 metrics: nil,
                 views: ["label": titleLabel]
             ),
           NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[text]-0-|",
+            withVisualFormat: "V:|-15-[text]-15-|",
                 options: [],
                 metrics: nil,
                 views: ["text": textView]

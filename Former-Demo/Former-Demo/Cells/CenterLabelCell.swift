@@ -36,13 +36,13 @@ final class CenterLabelCell: FormCell, LabelFormableRow {
         
         let constraints = [
           NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[titleLabel]-0-|",
+            withVisualFormat: "V:|-5-[titleLabel]-5-|",
                 options: [],
                 metrics: nil,
                 views: ["titleLabel": titleLabel]
             ),
             NSLayoutConstraint.constraints(
-              withVisualFormat: "H:|-0-[titleLabel]-0-|",
+              withVisualFormat: "H:|-5-[titleLabel]-5-|",
                 options: [],
                 metrics: nil,
                 views: ["titleLabel": titleLabel]

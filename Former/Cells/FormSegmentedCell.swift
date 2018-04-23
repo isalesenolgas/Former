@@ -38,13 +38,13 @@ open class FormSegmentedCell: FormCell, SegmentedFormableRow {
         
         let constraints = [
           NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[title]-0-|",
+            withVisualFormat: "V:|-15-[title]-15-|",
                 options: [],
                 metrics: nil,
                 views: ["title": titleLabel]
             ),
           NSLayoutConstraint.constraints(
-            withVisualFormat: "V:[segment(30)]",
+            withVisualFormat: "V:|-15-[segment(30)]-15-|",
                 options: [],
                 metrics: nil,
                 views: ["segment": segmentedControl]

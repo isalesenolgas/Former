@@ -28,7 +28,7 @@ open class FormCheckCell: FormCell, CheckFormableRow {
         
         let constraints = [
           NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[label]-0-|",
+            withVisualFormat: "V:|-15-[label]-15-|",
                 options: [],
                 metrics: nil,
                 views: ["label": titleLabel]

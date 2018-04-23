@@ -735,6 +735,13 @@ public final class Former: NSObject {
         tableView?.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(Former.keyboardWillAppear(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(Former.keyboardWillDisappear(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        tableView?.rowHeight = UITableViewAutomaticDimension
+        tableView?.estimatedRowHeight = 44
+        
+        tableView?.sectionHeaderHeight = UITableViewAutomaticDimension
+        tableView?.estimatedSectionHeaderHeight = 44
+
     }
     
     fileprivate func removeCurrentInlineRow() -> IndexPath? {
@@ -988,21 +995,21 @@ extension Former: UITableViewDelegate, UITableViewDataSource {
         return self[section].numberOfRows
     }
 
-    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        let rowFormer = self.rowFormer(indexPath: indexPath)
-        if let dynamicRowHeight = rowFormer.dynamicRowHeight {
-            rowFormer.rowHeight = dynamicRowHeight(tableView, indexPath)
-        }
-        return rowFormer.rowHeight
-    }
-    
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let rowFormer = self.rowFormer(indexPath: indexPath)
-        if let dynamicRowHeight = rowFormer.dynamicRowHeight {
-            rowFormer.rowHeight = dynamicRowHeight(tableView, indexPath)
-        }
-        return rowFormer.rowHeight
-    }
+//    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        let rowFormer = self.rowFormer(indexPath: indexPath)
+//        if let dynamicRowHeight = rowFormer.dynamicRowHeight {
+//            rowFormer.rowHeight = dynamicRowHeight(tableView, indexPath)
+//        }
+//        return rowFormer.rowHeight
+//    }
+//
+//    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        let rowFormer = self.rowFormer(indexPath: indexPath)
+//        if let dynamicRowHeight = rowFormer.dynamicRowHeight {
+//            rowFormer.rowHeight = dynamicRowHeight(tableView, indexPath)
+//        }
+//        return rowFormer.rowHeight
+//    }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let rowFormer = self.rowFormer(indexPath: indexPath)
@@ -1022,13 +1029,13 @@ extension Former: UITableViewDelegate, UITableViewDataSource {
 //        return headerViewFormer?.viewHeight ?? 0
 //    }
     
-    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let headerViewFormer = self[section].headerViewFormer
-        if let dynamicViewHeight = headerViewFormer?.dynamicViewHeight {
-            headerViewFormer?.viewHeight = dynamicViewHeight(tableView, section)
-        }
-        return headerViewFormer?.viewHeight ?? 0
-    }
+//    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        let headerViewFormer = self[section].headerViewFormer
+//        if let dynamicViewHeight = headerViewFormer?.dynamicViewHeight {
+//            headerViewFormer?.viewHeight = dynamicViewHeight(tableView, section)
+//        }
+//        return headerViewFormer?.viewHeight ?? 0
+//    }
     
     // Not implemented for iOS8 estimatedHeight bug
 //    public func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {

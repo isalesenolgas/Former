@@ -69,13 +69,13 @@ open class TextViewRowFormer<T: UITableViewCell>
             self.placeholderLabel = placeholderLabel
             let constraints = [
               NSLayoutConstraint.constraints(
-                withVisualFormat: "V:|-8-[label(>=0)]",
+                withVisualFormat: "V:|-8-[label(>=0)]-8-|",
                     options: [],
                     metrics: nil,
                     views: ["label": placeholderLabel]
                 ),
               NSLayoutConstraint.constraints(
-                withVisualFormat: "H:|-5-[label]-0-|",
+                withVisualFormat: "H:|-5-[label]-15-|",
                     options: [],
                     metrics: nil,
                     views: ["label": placeholderLabel]

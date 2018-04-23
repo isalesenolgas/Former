@@ -49,13 +49,13 @@ open class FormInlineDatePickerCell: FormCell, InlineDatePickerFormableRow {
         
         let constraints = [
           NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[title]-0-|",
+            withVisualFormat: "V:|-15-[title]-15-|",
                 options: [],
                 metrics: nil,
                 views: ["title": titleLabel]
             ),
           NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[display]-0-|",
+            withVisualFormat: "V:|-15-[display]-15-|",
                 options: [],
                 metrics: nil,
                 views: ["display": displayLabel]

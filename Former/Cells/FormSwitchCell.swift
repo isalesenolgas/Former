@@ -30,6 +30,8 @@ open class FormSwitchCell: FormCell, SwitchFormableRow {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.insertSubview(titleLabel, at: 0)
         self.titleLabel = titleLabel
+        self.titleLabel.numberOfLines = 0
+        self.titleLabel.lineBreakMode = .byWordWrapping
         
         let switchButton = UISwitch()
         accessoryView = switchButton
@@ -37,13 +39,13 @@ open class FormSwitchCell: FormCell, SwitchFormableRow {
 
         let constraints = [
           NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-0-[label]-0-|",
-                options: [],
+            withVisualFormat: "V:|-15-[label]-15-|",
+            options: [],
                 metrics: nil,
                 views: ["label": titleLabel]
             ),
           NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-15-[label(>=0)]",
+            withVisualFormat: "H:|-15-[label(>=0)]-15-|",
                 options: [],
                 metrics: nil,
                 views: ["label": titleLabel]
